@@ -1,0 +1,1 @@
+ALTER TABLE `service_requests` ADD `contactPhone` varchar(32);
