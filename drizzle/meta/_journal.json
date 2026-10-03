@@ -29,6 +29,13 @@
       "when": 1790545044414,
       "tag": "0003_mysterious_gauntlet",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1790935213131,
+      "tag": "0004_public_nightshade",
+      "breakpoints": true
     }
   ]
 }

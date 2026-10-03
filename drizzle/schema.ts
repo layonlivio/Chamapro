@@ -101,6 +101,17 @@ export const proposals = mysqlTable("proposals", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 
+export const notifications = mysqlTable("notifications", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  type: varchar("type", { length: 48 }).notNull(),
+  proposalId: int("proposalId"),
+  title: varchar("title", { length: 160 }).notNull(),
+  body: text("body").notNull(),
+  readAt: timestamp("readAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, table => ({ userIdx: index("notifications_user_idx").on(table.userId, table.readAt, table.createdAt) }));
+
 export const billingRecords = mysqlTable("billing_records", {
   id: int("id").autoincrement().primaryKey(),
   professionalId: int("professionalId").notNull(),
